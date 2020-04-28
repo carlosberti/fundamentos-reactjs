@@ -35,7 +35,11 @@ const Import: React.FC = () => {
   }
 
   function submitFile(files: File[]): void {
-    // TODO
+    setUploadedFiles(
+      files.map(file => {
+        return { file, name: file.name, readableSize: String(file.size) };
+      }),
+    );
   }
 
   return (
